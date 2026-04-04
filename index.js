@@ -28,7 +28,24 @@ const getNumberOfLines = () => {
     }
 }
 
+const getBet = (balance) => {
+    while(true){
+        const bet = prompt("Enter the total bet: ");
+        const numberBet = parseFloat(Lines);
 
-let balance = setDeposit();
+        if(isNaN(numberBet) || numberBet <= 0 || numberBet >= balance){
+            console.log("Invalid bet,Try again");
+        }
+        else{
+            return numberBet;
+        }
+    }
+}
+
+
+let callBalance = setDeposit();
 const numberOfLines = getNumberOfLines();
+const callBet = getBet();
+console.log(callBalance);
 console.log(numberOfLines);
+console.log(callBet);
